@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/bills.css">
+  <link rel="shortcut icon" href="/assets/swift-logo.png" type="image/x-icon" />
+  <title>Bills | SwiftBank</title>
+</head>
+
+<body style="visibility: hidden;">
+  <aside class="sidebar">
+      <div class="logo">
+        <img src="/assets/SwiftBank2.png" alt="SwiftBank" />
+      </div>
+
+      <ul class="navigation">
+        <li>
+          <a href="dashboard.html"
+            ><img src="/assets/home-icon.svg" />Dashboard</a
+          >
+        </li>
+
+        <li>
+          <a href="transfer.html"
+            ><img src="/assets/transfer-icon.svg" />Transfer</a
+          >
+        </li>
+
+        <li>
+          <a href="history.html"
+            ><img src="/assets/history-icon.svg" />History</a
+          >
+        </li>
+
+        <li class="active">
+          <a href="bills.html"><img src="/assets/bills-icon.svg" />Bills</a>
+        </li>
+
+        <li>
+          <a href="cards.html"><img src="/assets/card-icon.svg" />Cards</a>
+        </li>
+
+        <li>
+          <a href="#"><img src="/assets/loan-icon.svg" />Loans</a>
+        </li>
+
+        <li>
+          <a href="profile.html"><img src="/assets/person.svg" />Profile</a>
+        </li>
+      </ul>
+
+      <div class="bottom-menu">
+        <a href="#">
+          <img src="/assets/settings.svg" />
+          Settings
+        </a>
+
+        <a href="#">
+          <img src="/assets/support.svg" />
+          Help & Support
+        </a>
+
+        <hr />
+
+        <a href="login.html">
+          <img src="/assets/logout-icon.svg" />
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="main-wrapper">
+    <header>
+
+        <button class="hamburger-btn" id="hamburgerBtn">
+         <i class="bi bi-list"></i>
+        </button>
+
+      <div class="welcome-left">
+        <img src="/assets/deji.jpeg" alt="" class="welcome-avatar" />
+        <div>
+            <p>Welcome back,</p>
+            <h3>Olawuyi Adedeji👋</h3>
+        </div>
+        </div>
+
+      <div class="welcome-right">
+        <div class="position-relative d-inline-block">
+          <img src="/assets/notification-icon.svg" alt="" width="35" />
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            3
+          </span>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            style="background: none; border: none">
+            <div style="
+                  width: 45px;
+                  height: 45px;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  display: inline-block;
+                ">
+              <img src="/assets/deji.jpeg" alt="" style="width: 100%; height: 100%; object-fit: cover" />
+            </div>
+            <span id="dropdownName" style="color: #111827; font-weight: 600; margin-left: 8px; font-size: 14px;">Olawuyi Adedeji</span>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item text-danger" href="login.html">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="bill-payments">
+        <h1>Bill Payments</h1>
+        <p>Pay all your bills quickly and securely.</p>
+      </div>
+
+      <div class="main-split">
+        <div class="left">
+          <div class="tabs">
+            <div class="tab-bar">
+              <button class="tab-btn active" id="payBillsTab" data-target="payBillsContent">
+                Pay Bills
+              </button>
+              <button class="tab-btn" id="paymentHistoryTab" data-target="paymentHistoryContent">
+                Payment History
+              </button>
+            </div>
+          </div>
+
+          <div class="left-top">
+            <div class="tab-content active" id="payBillsContent">
+              <div class="choose">
+                <h4>Choose a Service</h4>
+                <div class="search-wrapper">
+                  <i class="bi bi-search search-icon"></i>
+                  <input type="search" name="" id="" placeholder="Search Billers..." class="search" />
+                </div>
+              </div>
+
+              <div class="bills-grid">
+                <div class="grid child-a">
+                  <div class="grid-content">
+                    <img src="./assets/electric.svg" alt="" width="40px">
+                    <p>Electricity</p>
+                  </div>
+                </div>
+
+                <div class="grid child-b">
+                  <div class="grid-content">
+                    <img src="./assets/mobile.svg" alt="" width="30px">
+                    <p>Airtime</p>
+                  </div>
+                </div>
+
+                <div class="grid child-c">
+                  <div class="grid-content">
+                    <img src="./assets/wifi.svg" alt="" width="30px">
+                    <p>Data</p>
+                  </div>
+                </div>
+
+                <div class="grid child-d">
+                  <div class="grid-content">
+                    <img src="./assets/tv.svg" alt="" width="30px">
+                    <p>TV Subscription</p>
+                  </div>
+                </div>
+
+                <div class="grid child-e">
+                  <div class="grid-content">
+                    <i class="bi bi-globe internet"></i>
+                    <p>Internet</p>
+                  </div>
+                </div>
+
+                <div class="grid child-f">
+                  <div class="grid-content">
+                    <i class="bi bi-droplet-fill water"></i>
+                    <p>Water</p>
+                  </div>
+                </div>
+
+                <div class="grid child-g">
+                  <div class="grid-content">
+                    <i class="bi bi-shield-fill-check security-icon insurance"></i>
+                    <p>Insurance</p>
+                  </div>
+                </div>
+
+                <div class="grid child-h">
+                  <div class="grid-content">
+                    <i class="bi bi-mortarboard-fill education"></i>
+                    <p>Education</p>
+                  </div>
+                </div>
+
+                <div class="grid child-i">
+                  <div class="grid-content">
+                    <i class="bi bi-bank loan"></i>
+                    <p>Loan Repayment</p>
+                  </div>
+                </div>
+
+                <div class="grid child-j">
+                  <div class="grid-content">
+                    <i class="bi bi-house-fill property"></i>
+                    <p>Property</p>
+                  </div>
+                </div>
+
+                <div class="grid child-k">
+                  <div class="grid-content">
+                    <i class="bi bi-broadcast cable"></i>
+                    <p>Cable TV</p>
+                  </div>
+                </div>
+
+                <div class="grid child-l">
+                  <div class="grid-content">
+                    <i class="bi bi-three-dots dots"></i>
+                    <p>More</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="paymentHistoryContent">
+              <p>
+                This Feature is undergoing construction
+              </p>
+            </div>
+          </div>
+
+          <div class="left-bottom">
+            <div class="recent-bills">
+              <h3>Recent Bill Payments</h3>
+              <a href="">View All</a>
+            </div>
+            <table>
+              <thead>
+                <tr class="head">
+                  <!-- <th>Mark</th> -->
+                  <th>Biller</th>
+                  <th>Account/Meter No.</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="table-display">
+                <tr style="border-bottom: 1px solid #333">
+                  <td>
+                    <span class="images"><img src="/assets/electric.svg" alt="" width="30" /></span>Ikeja Electric
+                  </td>
+                  <td>0123456789</td>
+                  <td>#15,000.00</td>
+                  <td>June 18, 2026</td>
+                  <td><span class="last">Successful</span></td>
+                  <td>&#8942;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="images"><img src="/assets/mobile.svg" alt="" width="20" /></span>MTN Airtime
+                  </td>
+                  <td>08012345678</td>
+                  <td>#1,000.00</td>
+                  <td>June 18, 2026</td>
+                  <td><span class="last">Successful</span></td>
+                  <td>&#8942;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="images"><img src="/assets/wifi.svg" alt="" width="20" /></span>Spectranet
+                  </td>
+                  <td>0123456789</td>
+                  <td>#12,500.00</td>
+                  <td>June 17, 2026</td>
+                  <td><span class="last">Successful</span></td>
+                  <td>&#8942;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="images"><img src="/assets/tv.svg" alt="" width="20" /></span>DStv
+                  </td>
+                  <td>1234567890</td>
+                  <td>#7,800.00</td>
+                  <td>June 16, 2026</td>
+                  <td><span class="last">Successful</span></td>
+                  <td>&#8942;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="right">
+
+          <div class="right-top">
+
+            <div class="payees-top">
+              <h3>Saved Payees</h3>
+              <a href="">Manage</a>
+            </div>
+
+            <div class="transfer-row">
+              <div class="row-details">
+               <div class="icon flash">
+                <img src="/assets/electric.svg" alt="" width="20" />
+               </div>
+                <div class="row-info">
+                  <p class="biller">Ikeja Electric</p>
+                  <p class="sub"> 0123456789 </p>
+                </div>
+              </div>
+
+              <span class="three-dots">&#8942;</span>
+
+            </div>
+            
+            <div class="transfer-row">
+              <div class="row-details">
+               <div class="icon mtn">
+                <p>MT</p>
+               </div>
+                <div class="row-info">
+                  <p class="biller">MTN Airtime</p>
+                  <p class="sub"> 08112345678 </p>
+                </div>
+              </div>
+
+              <span class="three-dots">&#8942;</span>
+
+            </div>
+
+            <div class="transfer-row">
+              <div class="row-details">
+               <div class="icon dstv">
+                <p>DS</p>
+               </div>
+                <div class="row-info">
+                  <p class="biller">DSTv</p>
+                  <p class="sub"> 1234567890 </p>
+                </div>
+              </div>
+
+              <span class="three-dots">&#8942;</span>
+
+            </div>
+
+            <div class="transfer-row">
+              <div class="row-details">
+               <div class="icon spec">
+                <p>SP</p>
+               </div>
+                <div class="row-info">
+                  <p class="biller">Spectranet</p>
+                  <p class="sub"> 0123456789 </p>
+                </div>
+              </div>
+
+              <span class="three-dots">&#8942;</span>
+
+            </div>
+
+            <div class="transfer-row">
+              <div class="row-details">
+               <div class="icon lagos">
+                <p>LA</p>
+               </div>
+                <div class="row-info">
+                  <p class="biller">Lagos Water</p>
+                  <p class="sub"> 0123456789 </p>
+                </div>
+              </div>
+
+              <span class="three-dots">&#8942;</span>
+
+            </div>
+
+            <div class="add-payee">
+              <button><span class="plus">+</span>Add New Payeе </button>
+            </div>
+
+
+          </div>
+
+          <div class="right-middle">
+            <div class="quick-top">
+              <div class="quick-left">
+                <h3>Quick Pay</h3>
+                <p>Pay any bill in a few taps</p>
+              </div>
+              <div class="quick-right">
+                <img src="./assets/wallet.png" alt="" width="160px" height="160px" />
+              </div>
+            </div>
+            <div class="quick-bottom">
+              <button>
+                <i class="bi bi-credit-card ike"></i>
+                Pay with One-Time Payment
+              </button>
+            </div>
+          </div>
+
+          <div class="right-bottom">
+
+            <div class="bottom-left">
+              <div class="logo-box">
+                <img src="/assets/secure-logo-removebg-preview.png" alt="Secure Logo" />
+              </div>
+
+              <div class="bottom-content">
+                <h2>Secure Transfers</h2>
+                <p>
+                  All bills are protected with bank-level <br />
+                  security and 256-bit SSL encryption.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </main>
+    <footer>
+      <!-- Copyright -->
+      <div class="footer-left">
+        <p>©2026 SwiftBank. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="">Privacy Policy</a>
+        <a href="">Terms of Service</a>
+        <a href="">Help Center</a>
+      </div>
+    </footer>
+
+    <nav class="bottom-nav">
+      <a href="dashboard.html"><i class="bi bi-house"></i><span>Dashboard</span></a>
+      <a href="transfer.html"><i class="bi bi-arrow-left-right"></i><span>Transfer</span></a>
+      <a href="bills.html" class="active"><i class="bi bi-receipt" class="active"></i><span>Bills</span></a>
+      <a href="cards.html"><i class="bi bi-credit-card"></i><span>Cards</span></a>
+      <a href="profile.html"><i class="bi bi-person"></i><span>Profile</span></a>
+    </nav>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="bills.js"></script>
+  <script type="module" src="auth-guard.js"></script>
+ 
+</body>
+
+</html>

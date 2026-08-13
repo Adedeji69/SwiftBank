@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/swift-logo.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/transfer.css" />
+    <title>Transfer | SwiftBank</title>
+
+    
+  </head>
+  <body style="visibility: hidden;">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="/assets/SwiftBank2.png" alt="SwiftBank" />
+      </div>
+
+      <ul class="navigation">
+        <li>
+          <a href="dashboard.html"
+            ><img src="/assets/home-icon.svg" />Dashboard</a
+          >
+        </li>
+
+        <li class="active">
+          <a href="transfer.html"
+            ><img src="/assets/transfer-icon.svg" />Transfer</a
+          >
+        </li>
+
+        <li>
+          <a href="history.html"
+            ><img src="/assets/history-icon.svg" />History</a
+          >
+        </li>
+
+        <li>
+          <a href="bills.html"><img src="/assets/bills-icon.svg" />Bills</a>
+        </li>
+
+        <li>
+          <a href="cards.html"><img src="/assets/card-icon.svg" />Cards</a>
+        </li>
+
+        <li>
+          <a href="#"><img src="/assets/loan-icon.svg" />Loans</a>
+        </li>
+
+        <li>
+          <a href="profile.html"><img src="/assets/person.svg" />Profile</a>
+        </li>
+      </ul>
+
+      <div class="bottom-menu">
+        <a href="#">
+          <img src="/assets/settings.svg" />
+          Settings
+        </a>
+
+        <a href="#">
+          <img src="/assets/support.svg" />
+          Help & Support
+        </a>
+
+        <hr />
+
+        <a href="login.html">
+          <img src="/assets/logout-icon.svg" />
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-wrapper">
+      <header>
+        <button class="hamburger-btn" id="hamburgerBtn">
+          <i class="bi bi-list"></i>
+        </button>
+        <!-- Menu Toggle -->
+        <!-- Welcome Message -->
+
+        
+        <div class="welcome-left">
+          <img src="/assets/deji.jpeg" alt="" class="welcome-avatar" />
+          <div>
+            <p>Welcome back,</p>
+            <h3>Olawuyi Adedeji👋</h3>
+          </div>
+        </div>
+
+        <div class="welcome-right">
+          <div class="position-relative d-inline-block">
+            <img src="/assets/notification-icon.svg" alt="" width="35" />
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              3
+            </span>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              style="background: none; border: none"
+            >
+              <div
+                style="
+                  width: 45px;
+                  height: 45px;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  display: inline-block;
+                "
+              >
+                <img
+                  src="/assets/deji.jpeg"
+                  alt=""
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+              </div>
+              <span id="dropdownName" style="color: #111827; font-weight: 600; margin-left: 8px; font-size: 14px;">Olawuyi Adedeji</span>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item text-danger" href="login.html"
+                  >Log Out</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Notifications -->
+        <!-- Profile -->
+      </header>
+
+      <main>
+        <div class="title">
+          <h1>Transfer Money</h1>
+          <p>Send money to any bank account instantly.</p>
+        </div>
+
+        <div class="main-split">
+          <div class="split-left">
+            <div class="split-left-head">
+              <h2>Send Money</h2>
+              <p>Transfer Type</p>
+            </div>
+
+            <div class="left-content">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="BankAccount-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#bank-account-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="bank-account-pane"
+                    aria-selected="true"
+                  >
+                    To Bank Account
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="SwiftUser-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#swift-user-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="swift-user-pane"
+                    aria-selected="false"
+                  >
+                    To Swift User
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="bank-account-pane"
+                  role="tabpanel"
+                >
+                  <div class="form-group">
+                    <label>Recipient Bank</label>
+                    <div class="bank-select-wrapper">
+                      <div class="bank-icon" id="bankIconBankAccount">A</div>
+                      <select class="bank-select" id="bankSelectBankAccount">
+                        <option value="" disabled selected>
+                          Select a bank
+                        </option>
+                        <option value="access">Access Bank Nigeria</option>
+                        <option value="fidelity">Fidelity Bank</option>
+                        <option value="first-bank">
+                          First Bank of Nigeria
+                        </option>
+                        <option value="fcmb">
+                          First City Monument Bank (FCMB)
+                        </option>
+                        <option value="gtbank">
+                          Guaranty Trust Bank (GTBank)
+                        </option>
+                        <option value="keystone">Keystone Bank</option>
+                        <option value="kuda">Kuda Bank</option>
+                        <option value="moniepoint">Moniepoint MFB</option>
+                        <option value="opay">OPay</option>
+                        <option value="palmpay">PalmPay</option>
+                        <option value="polaris">Polaris Bank</option>
+                        <option value="providus">Providus Bank</option>
+                        <option value="stanbic">Stanbic IBTC Bank</option>
+                        <option value="standard-chartered">
+                          Standard Chartered Bank
+                        </option>
+                        <option value="sterling">Sterling Bank</option>
+                        <option value="union">Union Bank of Nigeria</option>
+                        <option value="uba">
+                          United Bank for Africa (UBA)
+                        </option>
+                        <option value="unity">Unity Bank</option>
+                        <option value="wema">Wema Bank</option>
+                        <option value="zenith">Zenith Bank</option>
+                      </select>
+                      <span class="chevron">▾</span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Recipient Account Number</label>
+                    <div class="account-row">
+                      <input
+                        type="text"
+                        id="accountNumberBankAccount"
+                        placeholder="0123456789"
+                      />
+                      <button class="verify-btn" type="button">
+                        Verify Account
+                      </button>
+                    </div>
+                    <div class="verified-msg">
+                      <span class="check">✓</span>
+                      Account number verified
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Recipient Name</label>
+                    <input
+                      type="text"
+                      class="readonly-field"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Amount</label>
+                    <div class="amount-row">
+                      <div class="amount-prefix">NGN</div>
+                      <input type="text" placeholder="50,000.00" />
+                    </div>
+                    <div class="hint">Enter amount to transfer</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Transfer Note (Optional)</label>
+                    <div class="note-wrapper">
+                      <input
+                        type="text"
+                        id="noteBankAccount"
+                        placeholder="e.g. Payment for invoice"
+                        maxlength="50"
+                      />
+                      <span class="char-count" id="charCountBankAccount"
+                        >0/50</span
+                      >
+                    </div>
+                  </div>
+
+                  <button class="submit-btn" type="button">
+                    Proceed to Confirm
+                  </button>
+                </div>
+
+                <div class="tab-pane fade" id="swift-user-pane" role="tabpanel">
+                  <div class="form-group">
+                    <label>Recipient Username / SwiftBank Tag</label>
+                    <div class="account-row">
+                      <input
+                        type="text"
+                        id="usernameSwiftUser"
+                        placeholder="e.g. @johndoe"
+                      />
+                      <button class="verify-btn" type="button">
+                        Verify User
+                      </button>
+                    </div>
+                    <div class="verified-msg">
+                      <span class="check">✓</span>
+                      User verified
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Recipient Name</label>
+                    <input
+                      type="text"
+                      class="readonly-field"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Amount</label>
+                    <div class="amount-row">
+                      <div class="amount-prefix">NGN</div>
+                      <input type="text" placeholder="50,000.00" />
+                    </div>
+                    <div class="hint">Enter amount to transfer</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Transfer Note (Optional)</label>
+                    <div class="note-wrapper">
+                      <input
+                        type="text"
+                        id="noteSwiftUser"
+                        placeholder="e.g. Payment for invoice"
+                        maxlength="50"
+                      />
+                      <span class="char-count" id="charCountSwiftUser"
+                        >0/50</span
+                      >
+                    </div>
+                  </div>
+
+                  <button class="submit-btn" type="button">
+                    Proceed to Confirm
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="split-right">
+            <div class="top">
+              <div class="transfer">
+                <h4>Quick Transfer</h4>
+                <a href="">Add beneficiary</a>
+              </div>
+
+              <div class="list">
+                <div class="list-names">
+                  <div class="h4-wrap">
+                    <div class="list-surround">
+                      <h4>JD</h4>
+                    </div>
+                    <p>John Doe</p>
+                    <p class="acct-no">0123456789</p>
+                  </div>
+                </div>
+                <div class="list-names">
+                  <div class="h4-wrap">
+                    <div class="list-surround">
+                      <h4>AM</h4>
+                    </div>
+                    <p>Amina Musa</p>
+                    <p class="acct-no">0987654321</p>
+                  </div>
+                </div>
+                <div class="list-names">
+                  <div class="h4-wrap">
+                    <div class="list-surround">
+                      <h4>BB</h4>
+                    </div>
+                    <p>Bola Bello</p>
+                    <p class="acct-no">0712345678</p>
+                  </div>
+                </div>
+                <div class="list-names">
+                  <div class="h4-wrap">
+                    <div class="list-surround">
+                      <h4>OO</h4>
+                    </div>
+                    <p>Olamide Olu</p>
+                    <p class="acct-no">0901234567</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="middle">
+              <div class="transfer-history">
+                <div class="transfer-header">
+                  <h4>Recent Transfers</h4>
+                  <a href="">View All</a>
+                </div>
+
+                <div class="transfer-row">
+                  <div class="row-icon icon-purple">
+                    <i class="bi bi-bank2"></i>
+                  </div>
+                  <div class="row-info">
+                    <p class="name">John Doe</p>
+                    <p class="subtitle">Access Bank &bull; 0123456789</p>
+                  </div>
+                  <div class="row-amount">
+                    <p class="amount">-&#8358;50,000.00</p>
+                    <p class="date">June 18, 2026 &bull; 10:30 AM</p>
+                  </div>
+                  <span class="status-badge status-success">Successful</span>
+                </div>
+
+                <div class="transfer-row">
+                  <div class="row-icon icon-orange">
+                    <i class="bi bi-bank2"></i>
+                  </div>
+                  <div class="row-info">
+                    <p class="name">Amina Musa</p>
+                    <p class="subtitle">GTBank &bull; 0987654321</p>
+                  </div>
+                  <div class="row-amount">
+                    <p class="amount">-&#8358;25,000.00</p>
+                    <p class="date">June 17, 2026 &bull; 04:15 PM</p>
+                  </div>
+                  <span class="status-badge status-success">Successful</span>
+                </div>
+
+                <div class="transfer-row">
+                  <div class="row-icon icon-green">
+                    <i class="bi bi-person-fill"></i>
+                  </div>
+                  <div class="row-info">
+                    <p class="name">Bola Bello</p>
+                    <p class="subtitle">SwiftBank User</p>
+                  </div>
+                  <div class="row-amount">
+                    <p class="amount">-&#8358;10,000.00</p>
+                    <p class="date">June 17, 2026 &bull; 09:20 AM</p>
+                  </div>
+                  <span class="status-badge status-success">Successful</span>
+                </div>
+
+                <div class="transfer-row">
+                  <div class="row-icon icon-blue">
+                    <i class="bi bi-bank2"></i>
+                  </div>
+                  <div class="row-info">
+                    <p class="name">Olamide Olu</p>
+                    <p class="subtitle">Zenith Bank &bull; 0901234567</p>
+                  </div>
+                  <div class="row-amount">
+                    <p class="amount">-&#8358;15,000.00</p>
+                    <p class="date">June 16, 2026 &bull; 02:45 PM</p>
+                  </div>
+                  <span class="status-badge status-failed">Failed</span>
+                </div>
+
+                <div class="transfer-row">
+                  <div class="row-icon icon-purple">
+                    <i class="bi bi-bank2"></i>
+                  </div>
+                  <div class="row-info">
+                    <p class="name">Electricity Bill</p>
+                    <p class="subtitle">AEDC Prepaid</p>
+                  </div>
+                  <div class="row-amount">
+                    <p class="amount">-&#8358;5,000.00</p>
+                    <p class="date">June 16, 2026 &bull; 11:05 AM</p>
+                  </div>
+                  <span class="status-badge status-success">Successful</span>
+                </div>
+                  <hr class="hr-line">
+                <a href="" class="view-all-link"
+                  >View All Transactions &rarr;</a
+                >
+              </div>
+
+            </div>
+
+            <div class="top right-middle">
+            <div class="transfer">
+              <h4>Quick Transfer</h4>
+              <a href="">Add beneficiary</a>
+            </div>
+
+            <div class="list">
+              <div class="list-names">
+                <div class="h4-wrap">
+                  <div class="list-surround">
+                    <h4>JD</h4>
+                  </div>
+                  <p>John Doe</p>
+                  <p class="acct-no">0123456789</p>
+                </div>
+              </div>
+              <div class="list-names">
+                <div class="h4-wrap">
+                  <div class="list-surround">
+                    <h4>AM</h4>
+                  </div>
+                  <p>Amina Musa</p>
+                  <p class="acct-no">0987654321</p>
+                </div>
+              </div>
+              <div class="list-names">
+                <div class="h4-wrap">
+                  <div class="list-surround">
+                    <h4>BB</h4>
+                  </div>
+                  <p>Bola Bello</p>
+                  <p class="acct-no">0712345678</p>
+                </div>
+              </div>
+              <div class="list-names last">
+                <div class="h4-wrap">
+                  <div class="list-surround">
+                    <h4>OO</h4>
+                  </div>
+                  <p>Olamide Olu</p>
+                  <p class="acct-no">0901234567</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="bottom">
+              <div class="logo-box">
+                <img src="/assets/secure-logo-removebg-preview.png" alt="" />
+              </div>
+
+              <div class="bottom-content">
+                <h2>Secure Transfers</h2>
+                <p>
+                  All transfers are protected with bank-level <br />
+                  security and 256-bit SSL encryption.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <!-- Copyright -->
+        <div class="footer-left">
+          <p>©2026 SwiftBank. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+          <a href="">Privacy Policy</a>
+          <a href="">Terms of Service</a>
+          <a href="">Help Center</a>
+        </div>
+      </footer>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="dashboard.html"><i class="bi bi-house"></i><span>Dashboard</span></a>
+      <a href="transfer.html" class="active"><i class="bi bi-arrow-left-right"></i><span>Transfer</span></a>
+      <a href="bills.html"><i class="bi bi-receipt"></i><span>Bills</span></a>
+      <a href="cards.html"><i class="bi bi-credit-card"></i><span>Cards</span></a>
+      <a href="profile.html"><i class="bi bi-person"></i><span>Profile</span></a>
+    </nav>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="transfer.js"></script>
+    <script type="module" src="auth-guard.js"></script>
+  </body>
+</html>

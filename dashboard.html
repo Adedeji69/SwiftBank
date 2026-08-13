@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/swift-logo.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <title>Dashboard | SwiftBank</title>
+  </head>
+  <body style="visibility: hidden;">
+   
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="/assets/SwiftBank2.png" alt="SwiftBank" />
+        </div>
+
+        <ul class="navigation">
+          <li class="active">
+            <a href="dashboard.html"
+              ><img src="/assets/home-icon.svg" />Dashboard</a
+            >
+          </li>
+
+          <li>
+            <a href="transfer.html"
+              ><img src="/assets/transfer-icon.svg" />Transfer</a
+            >
+          </li>
+
+          <li>
+            <a href="history.html"
+              ><img src="/assets/history-icon.svg" />History</a
+            >
+          </li>
+
+          <li>
+            <a href="bills.html"><img src="/assets/bills-icon.svg" />Bills</a>
+          </li>
+
+          <li>
+            <a href="cards.html"><img src="/assets/card-icon.svg" />Cards</a>
+          </li>
+
+          <li>
+            <a href="#"><img src="/assets/loan-icon.svg" />Loans</a>
+          </li>
+
+          <li>
+            <a href="profile.html"><img src="/assets/person.svg" />Profile</a>
+          </li>
+        </ul>
+
+        <div class="bottom-menu">
+          <a href="#">
+            <img src="/assets/settings.svg" />
+            Settings
+          </a>
+
+          <a href="#">
+            <img src="/assets/support.svg" />
+            Help & Support
+          </a>
+
+          <hr />
+
+          <a href="login.html">
+            <img src="/assets/logout-icon.svg" />
+            Logout
+          </a>
+        </div>
+      </aside>
+
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <div class="main-wrapper">
+        <header>
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <!-- Welcome Message -->
+          <div class="welcome-left">
+            <img src="/assets/deji.jpeg" alt="" class="welcome-avatar" />
+            <div>
+              <p>Welcome back,</p>
+              <h3>Olawuyi Adedeji👋</h3>
+            </div>
+          </div>
+
+          <div class="welcome-right">
+            <div class="position-relative d-inline-block">
+              <img src="/assets/notification-icon.svg" alt="" width="35" />
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >
+                3
+              </span>
+            </div>
+
+            <div class="dropdown">
+              <button
+                class="dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                style="background: none; border: none"
+              >
+                <div style=" width: 45px; height: 45px; border-radius: 50%; overflow: hidden; display: inline-block; " >
+                  <img src="/assets/deji.jpeg" alt="" style="width: 100%; height: 100%; object-fit: cover" />
+                </div>
+                <span id="dropdownName" style="color: #111827; font-weight: 600; margin-left: 8px; font-size: 14px;">Olawuyi Adedeji</span>
+              </button>
+
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-danger" href="login.html"
+                    >Log Out</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <main>
+          <section class="top-row">
+            <!-- Account Card -->
+            <div class="account-card">
+              <div class="main-savings">
+                <p id="maskedAccountNumber" style="font-weight: 600; font-size: 18px;">Main Account: &nbsp;&nbsp;&nbsp; </p>
+                <div class="wrap">Savings</div>
+              </div>
+
+              <div class="balance">
+                <p class="acct-bal">
+                  Account Balance
+                  <i
+                    class="bi bi-eye"
+                    id="toggleBalance"
+                    style="cursor: pointer; font-size: 1.2rem"
+                  ></i>
+                </p>
+
+                <h1 id="balanceAmount">#2,456,789.00</h1>
+              </div>
+
+              <div class="btns">
+                <button class="acct-btn">Transfer</button>
+                <button class="acct-btn">Pay Bill</button>
+                <button class="acct-btn">Top Up</button>
+                <button class="acct-btn-last">.&nbsp;.&nbsp;.</button>
+              </div>
+            </div>
+
+            <div class="quick-action">
+              <h5>Quick Actions</h5>
+
+              <div class="quick-grid">
+                <div class="grid child-a">
+                  <img src="/assets/tranfer-blue.svg" alt="" />
+                  <p>Transfer</p>
+                </div>
+                <div class="grid child-b">
+                  <img src="/assets/bills-blue.svg" alt="" />
+                  <p>Pay Bills</p>
+                </div>
+                <div class="grid child-c">
+                  <img src="/assets/top-up.svg" alt="" />
+                  <p>Top Up</p>
+                </div>
+                <div class="grid child-d">
+                  <img src="/assets/card-blue.svg" alt="" />
+                  <p>Cards</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Premium -->
+            <div class="premium">
+              <p class="first">Upgrade to Premium</p>
+
+              <h3>
+                Get more with <br />
+                Swift<span>Bank</span> Premium
+              </h3>
+              <p class="second">
+                Enjoy higher limits, lower fees and <br />exclusive benefits.
+              </p>
+              <button class="premium-btn">Upgrade Now</button>
+            </div>
+          </section>
+
+          <section class="middle-row">
+            <!-- Recent Transactions -->
+            <div class="recent">
+              <div class="txn-header">
+                <h5>Recent Transactions</h5>
+                <a href="#">View All</a>
+              </div>
+
+              <!-- Column Labels -->
+              <div class="txn-labels">
+                <span>Date</span>
+                <span>Description</span>
+                <span>Amount</span>
+                <span>Status</span>
+              </div>
+
+              <!-- Rows -->
+              <div class="txn-row">
+                <span class="txn-date">June 18, 2026</span>
+                <span class="txn-desc">Bank Transfer</span>
+                <span class="txn-amount positive">+₦50,000.00</span>
+                <span class="txn-status">Completed</span>
+              </div>
+
+              <div class="txn-row">
+                <span class="txn-date">June 18, 2026</span>
+                <span class="txn-desc">Airtime Top Up</span>
+                <span class="txn-amount negative">-₦1,000.00</span>
+                <span class="txn-status">Completed</span>
+              </div>
+
+              <div class="txn-row">
+                <span class="txn-date">June 17, 2026</span>
+                <span class="txn-desc">Salary Credit</span>
+                <span class="txn-amount positive">+₦200,000.00</span>
+                <span class="txn-status">Completed</span>
+              </div>
+
+              <div class="txn-row">
+                <span class="txn-date">June 17, 2026</span>
+                <span class="txn-desc">Electricity Bill</span>
+                <span class="txn-amount negative">-₦15,000.00</span>
+                <span class="txn-status">Completed</span>
+              </div>
+
+              <div class="txn-row">
+                <span class="txn-date">May 17, 2026</span>
+                <span class="txn-desc">Transfer from John</span>
+                <span class="txn-amount positive">+₦30,000.00</span>
+                <span class="txn-status">Completed</span>
+              </div>
+            </div>
+
+            <!-- Spending Summary -->
+            <div class="spending">
+              <div class="spending-header">
+                <h5>Spending Summary</h5>
+                <select class="spending-filter">
+                  <option>July</option>
+                  <option>August</option>
+                  <option>September</option>
+                  <option>October</option>
+                  <option>November</option>
+                  <option>December</option>
+                  <option>January</option>
+                  <option>February</option>
+                  <option>March</option>
+                  <option>April</option>
+                  <option>May</option>
+                  <option>June</option>
+                </select>
+              </div>
+
+              <div class="summarys">
+                <div class="summary-left">
+                  <canvas id="spendingChart"></canvas>
+                </div>
+
+                <div class="summary-right">
+                  <div class="summary-row">
+                    <div class="summarys-left">
+                      <span class="dot blue"></span>
+                      <span class="title">Transfers</span>
+                    </div>
+
+                    <span class="percent">30%</span>
+                    <span class="amount">₦97,500</span>
+                  </div>
+
+                  <div class="summary-row">
+                    <div class="summarys-left">
+                      <span class="dot green"></span>
+                      <span class="title">Bills</span>
+                    </div>
+
+                    <span class="percent">25%</span>
+                    <span class="amount">₦81,250</span>
+                  </div>
+
+                  <div class="summary-row">
+                    <div class="summarys-left">
+                      <span class="dot orange"></span>
+                      <span class="title">Shopping</span>
+                    </div>
+
+                    <span class="percent">20%</span>
+                    <span class="amount">₦65,000</span>
+                  </div>
+
+                  <div class="summary-row">
+                    <div class="summarys-left">
+                      <span class="dot purple"></span>
+                      <span class="title">Airtime</span>
+                    </div>
+
+                    <span class="percent">15%</span>
+                    <span class="amount">₦48,750</span>
+                  </div>
+
+                  <div class="summary-row">
+                    <div class="summarys-left">
+                      <span class="dot gray"></span>
+                      <span class="title">Others</span>
+                    </div>
+
+                    <span class="percent">10%</span>
+                    <span class="amount">₦32,500</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bottom-row">
+            <!-- Insights -->
+            <div class="insight">
+              <h3>Insights</h3>
+
+              <div class="insight-flex">
+                <div class="trend">
+                  <img src="/assets/trend.svg" alt="" width="70" />
+                </div>
+                <p>
+                  You've spent <span class="naira">N25,000</span> less this
+                  month compared to last month.
+                </p>
+              </div>
+            </div>
+            <!-- Quick Transfer -->
+            <div class="quick">
+              <div class="transfer">
+                <h4>Quick Transfer</h4>
+                <a href="">Add beneficiary</a>
+              </div>
+
+              <div class="list">
+                <div class="list-names">
+                  <div class="h4-wrap">
+                    <div class="list-surround">
+                      <h4>JD</h4>
+                    </div>
+                    <p>John Doe</p>
+                  </div>
+                </div>
+                <div class="list-names">
+                  <div class="h4-wrap">
+                    <div class="list-surround">
+                      <h4>AM</h4>
+                    </div>
+                    <p>Amina Musa</p>
+                  </div>
+                </div>
+                <div class="list-names">
+                  <div class="h4-wrap">
+                    <div class="list-surround">
+                      <h4>BB</h4>
+                    </div>
+                    <p>Bola Bello</p>
+                  </div>
+                </div>
+                <div class="list-names">
+                  <div class="h4-wrap">
+                    <div class="list-surround">
+                      <h4>OO</h4>
+                    </div>
+                    <p>Olamide Olu</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Exchange Rates -->
+            <div class="exchange">
+              <div class="exchange-rate">
+                <h4>Exchange Rates</h4>
+                <a href="">View All</a>
+              </div>
+
+              <div class="rate-table">
+                <div class="rate-row">
+                  <span class="pair">USD / NGN</span>
+                  <span class="rate">1,530.00</span>
+                  <span class="change positive">▲ 0.45%</span>
+                </div>
+                <div class="rate-row">
+                  <span class="pair">GBP / NGN</span>
+                  <span class="rate">1,950.50</span>
+                  <span class="change positive">▲ 0.32%</span>
+                </div>
+                <div class="rate-row">
+                  <span class="pair">EUR / NGN</span>
+                  <span class="rate">1,650.20</span>
+                  <span class="change negative">▼ 0.16%</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="premium pre">
+            <p class="first">Upgrade to Premium</p>
+
+            <h3>
+              Get more with <br />
+              Swift<span>Bank</span> Premium
+            </h3>
+            <p class="second">
+              Enjoy higher limits, lower fees and <br />exclusive benefits.
+            </p>
+            <button class="premium-btn">Upgrade Now</button>
+          </div>
+        </main>
+
+        <footer>
+          <div class="footer-left">
+            <p>©2026 SwiftBank. All rights reserved.</p>
+          </div>
+          <div class="footer-right">
+            <a href="">Privacy Policy</a>
+            <a href="">Terms of Service</a>
+            <a href="">Help Center</a>
+          </div>
+        </footer>
+
+        <nav class="bottom-nav">
+          <a href="dashboard.html" class="active"
+            ><i class="bi bi-house"></i><span>Dashboard</span></a
+          >
+          <a href="transfer.html"
+            ><i class="bi bi-arrow-left-right"></i
+            ><span style="color: black">Transfer</span></a
+          >
+          <a href="bills.html"
+            ><i class="bi bi-receipt"></i
+            ><span style="color: black">Bills</span></a
+          >
+          <a href="cards.html"
+            ><i class="bi bi-credit-card"></i
+            ><span style="color: black">Cards</span></a
+          >
+          <a href="profile.html"
+            ><i class="bi bi-person"></i
+            ><span style="color: black">Profile</span></a
+          >
+        </nav>
+      </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="auth-guard.js"></script>
+  </body>
+</html>

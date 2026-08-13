@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/swift-logo.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>Log into your SwiftBank Account</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="content">
+            <img class="logo" src="/assets/SwiftBank2.png" alt="" width="200" />
+
+            <h1>Welcome Back!</h1>
+            <hr class="line" />
+            <p>
+            Log in to your account and access <br> your finances securely.
+            </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="top">
+          <div class="locked-icon">
+          <img src="/assets/lock-icon.svg" alt="" />
+        </div>
+
+        <h1>Log In to Your Account</h1>
+        <p class="subtitle">Enter your credentials to continue.</p>
+
+        <form id="loginForm" novalidate>
+          <div class="mb-3">
+            <label class="form-label" for="email">Email Address</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-envelope field-icon"></i>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <div class="input-icon-wrap">
+              <i class="bi bi-lock field-icon"></i>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Enter your password"
+                required
+                style="padding-right: 2.8rem"
+              />
+              <button type="button" class="toggle-pw" id="togglePw">
+                <i class="bi bi-eye" id="eyePw"></i>
+              </button>
+            </div>
+            <div class="strength-bar">
+              <div class="strength-fill" id="strengthFill"></div>
+            </div>
+            <div
+              class="strength-label"
+              id="strengthLabel"
+              style="color: #9ca3af"
+            ></div>
+            <div
+              class="invalid-feedback d-block"
+              id="pwError"
+              style="display: none !important"
+            ></div>
+          </div>
+
+          <div class="mb-4 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="rememberMe"
+              required
+            />
+            <label class="form-check-label" for="remember">
+              Remember me
+              <a href="" class="forgot"> Forgot Password?</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-create">Log In</button>
+        </form>
+
+        <div class="divider">
+          <span>Or log in with</span>
+        </div>
+
+        <button class="btn-with">
+          <img src="/assets/google-logo.png" alt="" width="50" />
+          Continue with Google
+        </button>
+        <button class="btn-with with">
+          <img src="/assets/Apple-Logo.png" alt="" width="40" />
+          Continue with Apple
+        </button>
+
+        <p class="register">
+          Don't have an account? <a href="/sign-up.html">Register</a>
+        </p>
+        </div>
+
+        <div class="bottom">
+          <div class="verified-icon">
+            <img src="/assets/verified_user.svg" alt="" width="30">
+          </div>
+          <p>
+            Your security is our priority. All transactions are protected with
+            256-bit SSL encryption.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="login.js"></script>
+  </body>
+</html>

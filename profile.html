@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/swift-logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/profile.css" />
+    <title>Profile | SwiftBank</title>
+
+
+  </head>
+  <body style="visibility: hidden;">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="/assets/SwiftBank2.png" alt="SwiftBank" />
+      </div>
+
+      <ul class="navigation">
+        <li>
+          <a href="dashboard.html"
+            ><img src="/assets/home-icon.svg" />Dashboard</a
+          >
+        </li>
+
+        <li>
+          <a href="transfer.html"
+            ><img src="/assets/transfer-icon.svg" />Transfer</a
+          >
+        </li>
+
+        <li>
+          <a href="history.html"
+            ><img src="/assets/history-icon.svg" />History</a
+          >
+        </li>
+
+        <li>
+          <a href="bills.html"><img src="/assets/bills-icon.svg" />Bills</a>
+        </li>
+
+        <li>
+          <a href="cards.html"><img src="/assets/card-icon.svg" />Cards</a>
+        </li>
+
+        <li>
+          <a href="#"><img src="/assets/loan-icon.svg" />Loans</a>
+        </li>
+
+        <li class="active">
+          <a href="profile.html"><img src="/assets/person.svg" />Profile</a>
+        </li>
+      </ul>
+
+      <div class="bottom-menu">
+        <a href="#">
+          <img src="/assets/settings.svg" />
+          Settings
+        </a>
+
+        <a href="#">
+          <img src="/assets/support.svg" />
+          Help & Support
+        </a>
+
+        <hr />
+
+        <a href="login.html">
+          <img src="/assets/logout-icon.svg" />
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-wrapper">
+      <header>
+        <!-- Menu Toggle -->
+        <button class="hamburger-btn" id="hamburgerBtn">
+          <i class="bi bi-list"></i>
+        </button>
+        <!-- Welcome Message -->
+        <div class="welcome-left">
+          <img src="/assets/deji.jpeg" alt="" class="welcome-avatar" />
+          <div>
+            <p>Welcome back,</p>
+            <h3>Olawuyi Adedeji👋</h3>
+          </div>
+        </div>
+
+        <div class="welcome-right">
+          <div class="position-relative d-inline-block">
+            <img src="/assets/notification-icon.svg" alt="" width="35" />
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              3
+            </span>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              style="background: none; border: none"
+            >
+              <div
+                style="
+                  width: 45px;
+                  height: 45px;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  display: inline-block;
+                "
+              >
+                <img
+                  src="/assets/deji.jpeg"
+                  alt=""
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+              </div>
+              <span id="dropdownName" style="color: #111827; font-weight: 600; margin-left: 8px; font-size: 14px;">Olawuyi Adedeji</span>
+              
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item text-danger" href="login.html"
+                  >Log Out</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Notifications -->
+        <!-- Profile -->
+      </header>
+
+      <main>
+        <div class="profile-top">
+          <h1>Profile & Settings</h1>
+          <p>
+            Manage your profile information, preferences and account settings.
+          </p>
+        </div>
+
+        <div class="profile">
+          <div class="profile-left">
+            <div class="tabs">
+              <div class="tab-bar">
+                <button
+                  class="tab-btn active"
+                  id="profileInfoTab"
+                  data-target="profileInfoContent"
+                >
+                  Profile Information
+                </button>
+                <button
+                  class="tab-btn"
+                  id="securityTab"
+                  data-target="securityContent"
+                >
+                  Security
+                </button>
+                <button
+                  class="tab-btn"
+                  id="prefrencesTab"
+                  data-target="prefrencesContent"
+                >
+                  Preferences
+                </button>
+                <button
+                  class="tab-btn"
+                  id="linkedAccountsTab"
+                  data-target="linkedAccountsContent"
+                >
+                  Linked Accounts
+                </button>
+              </div>
+            </div>
+
+            <div class="left-top">
+              <!-- profileInfoContent now WRAPS .details, and starts with class="active" -->
+              <div class="tab-content active" id="profileInfoContent">
+                <div class="profile-info">
+                  <h1>Profile Information</h1>
+                </div>
+
+                <div class="profile-head">
+                  <div class="profile-img">
+                    <img src="./assets/deji.jpeg" alt="" id="profileImg" />
+                    <label for="profilePicInput" class="profile-img-edit">
+                      <i class="bi bi-camera-fill"></i>
+                    </label>
+                    <input type="file" id="profilePicInput" accept="image/*" hidden />
+                  </div>
+
+                  <div class="profile-name">
+                    <h2 id="profileFullName">Olawuyi Adedeji</h2>
+                    <div class="verified">
+                      <h5>
+                        <i class="bi bi-check-circle-fill mark"></i>Verified
+                        Account
+                      </h5>
+                    </div>
+                    <p id="customerSince">Customer since May 12, 2024</p>
+                  </div>
+                </div>
+
+                <div class="details">
+                  <div class="details-row">
+                    <p>Full Name</p>
+                    <h6 class="detail" id="detailFullName">Olawuyi Adedeji</h6>
+                    <button>Edit</button>
+                  </div>
+
+                  <div class="details-row">
+                    <p>Email Address</p>
+                    <h6 class="detail" id="detailEmail">adedeji@gmail.com</h6>
+                    <button>Edit</button>
+                  </div>
+
+                  <div class="details-row">
+                    <p>Phone Number</p>
+                    <h6 class="detail" id="detailPhone">+234 801 234 5678</h6>
+                    <button>Edit</button>
+                  </div>
+
+                  <div class="details-row">
+                    <p>Date of Birth</p>
+                    <h6 class="detail" id="detailDob">May 15, 1990</h6>
+                    <button>Edit</button>
+                  </div>
+
+                  <div class="details-row">
+                    <p>Address</p>
+                    <h6 class="detail">
+                      15 Adekunle Street. Victoria Island, <br />
+                      Lagos, Nigeria
+                    </h6>
+                    <button>Edit</button>
+                  </div>
+
+                  <div class="details-row">
+                    <p>BVN</p>
+                    <h6 class="detail">************1234</h6>
+                    <button>Edit</button>
+                  </div>
+
+                  <div class="details-row">
+                    <p>Occupation</p>
+                    <h6 class="detail">Software Engineer</h6>
+                    <button>Edit</button>
+                  </div>
+
+                  <button id="updateProfileBtn">Update Profile</button>
+                </div>
+              </div>
+              <!-- closes #profileInfoContent -->
+
+              <div class="tab-content" id="securityContent">
+                <div class="construction">
+                  <h1>UNDER CONSTRUCTION</h1>
+                  <div class="construct-img">
+                    <img src="./assets/construct.png" alt="" />
+                  </div>
+                  <p>
+                    The security tab is still under construction, but we are
+                    ready to go!
+                  </p>
+                </div>
+              </div>
+
+              <div class="tab-content" id="prefrencesContent">
+                <div class="construction">
+                  <h1>UNDER CONSTRUCTION</h1>
+                  <div class="construct-img">
+                    <img src="./assets/construct.png" alt="" />
+                  </div>
+                  <p>
+                    The preference tab is still under construction, but we are
+                    ready to go!
+                  </p>
+                </div>
+              </div>
+
+              <div class="tab-content" id="linkedAccountsContent">
+                <div class="construction">
+                  <h1>UNDER CONSTRUCTION</h1>
+                  <div class="construct-img">
+                    <img src="./assets/construct.png" alt="" />
+                  </div>
+                  <p>
+                    The linked Account tab is still under construction, but we
+                    are ready to go!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="left-bottom">
+              <div class="need">
+                <h2>Need Help?</h2>
+                <p>We're here to help you with any questions or issues.</p>
+              </div>
+
+              <div class="need-help">
+                <div class="needs first-box">
+                  <div class="need-img live">
+                    <i class="bi bi-chat-dots-fill"></i>
+                  </div>
+                  <div class="need-content">
+                    <h5>Live Chat</h5>
+                    <p>Chat with our support team</p>
+                    <a href="">Start chat &rarr;</a>
+                  </div>
+                </div>
+                <div class="needs">
+                  <div class="need-img call">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div class="need-content">
+                    <h5>Call Us</h5>
+                    <p>+2347001234567</p>
+                    <a href="">Call Now &rarr;</a>
+                  </div>
+                </div>
+                <div class="needs">
+                  <div class="need-img email">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div class="need-content">
+                    <h5>Email Us</h5>
+                    <p>support@swiftbank.com</p>
+                    <a href="">Send Email &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="profile-right">
+            <div class="right-top">
+              <div class="account">
+                <h2>Account Summary</h2>
+              </div>
+
+              <div class="account-parent">
+                <div class="account-child one">
+                  <i class="bi bi-credit-card-fill card"></i>
+                  <p>Account Type</p>
+                  <p id="accountTypeDisplay">Premium</p>
+                </div>
+
+                <div class="account-child">
+                  <i class="bi bi-shield-fill-check secure"></i>
+                  <p>KYC Status</p>
+                  <p>Verified</p>
+                </div>
+
+                <div class="account-child">
+                  <i class="bi bi-calendar-week-fill calender"></i>
+                  <p>Last Login</p>
+                  <p id="lastLoginDisplay">May 18, 2026, 10:30 AM</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-middle">
+              <div class="security">
+                <h2>Security Shortcuts</h2>
+              </div>
+
+              <div class="shortcuts">
+                <div class="shortcut-row">
+                  <div class="shortcuts-left">
+                    <div class="shortcuts-icon">
+                      <i class="bi bi-lock-fill lock"></i>
+                    </div>
+                    <div class="short">
+                      <h5>Change Password</h5>
+                      <p>Update your account password regularly</p>
+                    </div>
+                  </div>
+                  <div class="shortcuts-right">&gt;</div>
+                </div>
+
+                <div class="shortcut-row">
+                  <div class="shortcuts-left">
+                    <div class="shortcuts-icon">
+                      <i class="bi bi-shield-fill-check shield"></i>
+                    </div>
+                    <div class="short">
+                      <h5>Two-Factor Authentication</h5>
+                      <p>Add an extra layer of security to your account</p>
+                    </div>
+                  </div>
+                  <p class="enable">Enabled</p>
+                  <div class="shortcuts-right">&gt;</div>
+                </div>
+
+                <div class="shortcut-row">
+                  <div class="shortcuts-left">
+                    <div class="shortcuts-icon">
+                      <i class="bi bi-phone phone"></i>
+                    </div>
+                    <div class="short">
+                      <h5>Manage Devices</h5>
+                      <p>View and manage devices linked to your account</p>
+                    </div>
+                  </div>
+                  <div class="shortcuts-right">&gt;</div>
+                </div>
+
+                <div class="shortcut-row last-row">
+                  <div class="shortcuts-left">
+                    <div class="shortcuts-icon">
+                      <i class="bi bi-key key"></i>
+                    </div>
+                    <div class="short">
+                      <h5>Login Activities</h5>
+                      <p>See your recent account activity and logins</p>
+                    </div>
+                  </div>
+                  <div class="shortcuts-right">&gt;</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-bottom">
+              <div class="prefrences-top">
+                <h2>Preferences</h2>
+              </div>
+
+              <div class="pref">
+                <div class="pref-row">
+                  <div class="pref-left">
+                    <div class="pref-icon">
+                      <i class="bi bi-bell bell"></i>
+                    </div>
+                    <div class="pref-notifocation">
+                      <h5>Email Notifications</h5>
+                      <p>Receive updates and alerts via email</p>
+                    </div>
+                  </div>
+                  <div class="pref-right">
+                    <label class="switch">
+                      <input type="checkbox" checked />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="pref-row">
+                  <div class="pref-left">
+                    <div class="pref-icon">
+                      <i class="bi bi-chat-square-text chat"></i>
+                    </div>
+                    <div class="pref-notifocation">
+                      <h5>SMS Notifications</h5>
+                      <p>Receive updates and alerts via SMS</p>
+                    </div>
+                  </div>
+                  <div class="pref-right">
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="pref-row last-row">
+                  <div class="pref-left">
+                    <div class="pref-icon">
+                      <i class="bi bi-moon moon"></i>
+                    </div>
+                    <div class="pref-notifocation">
+                      <h5>Dark Mode</h5>
+                      <p>Switch between light and dark mode</p>
+                    </div>
+                  </div>
+                  <div class="pref-right">
+                    <label class="switch">
+                      <input type="checkbox" checked />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="left-bottom second">
+          <div class="need">
+            <h2>Need Help?</h2>
+            <p>We're here to help you with any questions or issues.</p>
+          </div>
+
+          <div class="need-help">
+            <div class="needs first-box">
+              <div class="need-img live">
+                <i class="bi bi-chat-dots-fill"></i>
+              </div>
+              <div class="need-content">
+                <h5>Live Chat</h5>
+                <p>Chat with our support team</p>
+                <a href="">Start chat &rarr;</a>
+              </div>
+            </div>
+            <div class="needs">
+              <div class="need-img call">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <div class="need-content">
+                <h5>Call Us</h5>
+                <p>+2347001234567</p>
+                <a href="">Call Now &rarr;</a>
+              </div>
+            </div>
+            <div class="needs">
+              <div class="need-img email">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <div class="need-content">
+                <h5>Email Us</h5>
+                <p>support@swiftbank.com</p>
+                <a href="">Send Email &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </main>
+
+      <footer>
+        <!-- Copyright -->
+        <div class="footer-left">
+          <p>©2026 SwiftBank. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+          <a href="">Privacy Policy</a>
+          <a href="">Terms of Service</a>
+          <a href="">Help Center</a>
+        </div>
+      </footer>
+
+      <nav class="bottom-nav">
+        <a href="dashboard.html"><i class="bi bi-house"></i><span>Dashboard</span></a>
+        <a href="transfer.html"><i class="bi bi-arrow-left-right"></i><span>Transfer</span></a>
+        <a href="bills.html"><i class="bi bi-receipt"></i><span>Bills</span></a>
+        <a href="cards.html"><i class="bi bi-credit-card"></i><span>Cards</span></a>
+        <a href="profile.html" class="active"><i class="bi bi-person"></i><span>Profile</span></a>
+      </nav>
+
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="profile.js"></script>>
+    <script type="module" src="auth-guard.js"></script>
+  </body>
+</html>

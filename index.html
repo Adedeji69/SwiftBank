@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/swift-logo.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>
+      SwiftBank | Experience Secure and Modern Banking at Your Fingertips
+    </title>
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-lg bg-white border-bottom">
+        <div class="container">
+    
+          <a class="navbar-brand" href="#">
+            <img
+              src="/assets/SwiftBank.png"
+              alt="SwiftBank"
+              width="160"
+              height="auto"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Nav  -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#security">Security</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#help">Help</a>
+              </li>
+            </ul>
+
+            <div class="d-flex gap-2 mt-2 mt-lg-0">
+              <!-- <button class="btn btn-outline-primary" type="button">
+                Login
+              </button>
+              <button class="btn btn-primary" type="button">Register</button> -->
+              <button class="btn btn-outline-primary" onclick="window.location.href='/login.html'">Login</button>
+              <button class="btn btn-primary" onclick="window.location.href='/sign-up.html'">Register</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== HERO  ===== -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Banking<br />Made Simple</h1>
+          <p>Fast, secure and modern banking<br />at your fingertips.</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary px-4 py-2">Get Started</a>
+            <a href="#" class="btn btn-outline-light px-4 py-2">Learn More</a>
+          </div>
+          <p class="hero-trust">
+            <i class="bi bi-shield-fill-check text-success"></i>
+            Trusted by 100,000+ customers worldwide
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== FEATURES  ===== -->
+      <section class="features" id="features">
+        <div class="grid">
+          <div class="icon-wrapper">
+            <img
+              src="/assets/secure-logo-removebg-preview.png"
+              alt="Secure and Safe"
+              width="70"
+            />
+          </div>
+          <div>
+            <h3>Secure & Safe</h3>
+            <p>Your money is protected with bank-level security.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="icon-wrapper">
+            <img
+              src="/assets/fast-logo-removebg-preview.png"
+              alt="Fast Transactions"
+              width="30"
+            />
+          </div>
+          <div>
+            <h3>Fast Transactions</h3>
+            <p>Transfer money instantly anytime, anywhere.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="icon-wrapper">
+            <img
+              src="/assets/support.png"
+              alt="24/7 Support"
+              width="40"
+            />
+          </div>
+          <div>
+            <h3>24/7 Support</h3>
+            <p>Our support team is always here to help you.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="how" id="how-it-works">
+        <h2>How It Works</h2>
+
+        <div class="how-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h4>Create Account</h4>
+              <p>Sign up in minutes and verify your identity.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h4>Add Funds</h4>
+              <p>Fund your account using your preferred method.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h4>Start Banking</h4>
+              <p>Send money, pay bills and manage your finances easily.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>
+              <h4>Stay in Control</h4>
+              <p>Track your spending and grow your savings.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="/assets/SwiftBank2.png" alt="logo" width="140" />
+          <small>© 2026 SwiftBank. All rights reserved.</small>
+        </div>
+
+        <!-- Company -->
+        <nav aria-label="Company Links">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </nav>
+
+        <!-- Support -->
+        <nav aria-label="Support Links">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </nav>
+
+        <!-- Legal -->
+        <nav aria-label="Legal Links">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </nav>
+
+        <!-- Social -->
+        <div class="footer-social">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="bi bi-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

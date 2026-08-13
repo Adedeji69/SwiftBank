@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/cards.css">
+    <link rel="shortcut icon" href="/assets/swift-logo.png" type="image/x-icon"/>
+    <title>Cards | SwiftBank</title>
+  </head>
+  <body style="visibility: hidden;">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="/assets/SwiftBank2.png" alt="SwiftBank" />
+      </div>
+
+      <ul class="navigation">
+        <li>
+          <a href="dashboard.html"
+            ><img src="/assets/home-icon.svg" />Dashboard</a
+          >
+        </li>
+
+        <li>
+          <a href="transfer.html"
+            ><img src="/assets/transfer-icon.svg" />Transfer</a
+          >
+        </li>
+
+        <li>
+          <a href="history.html"
+            ><img src="/assets/history-icon.svg" />History</a
+          >
+        </li>
+
+        <li>
+          <a href="bills.html"><img src="/assets/bills-icon.svg" />Bills</a>
+        </li>
+
+        <li class="active">
+          <a href="cards.html"><img src="/assets/card-icon.svg" />Cards</a>
+        </li>
+
+        <li>
+          <a href="#"><img src="/assets/loan-icon.svg" />Loans</a>
+        </li>
+
+        <li>
+          <a href="profile.html"><img src="/assets/person.svg" />Profile</a>
+        </li>
+      </ul>
+
+      <div class="bottom-menu">
+        <a href="#">
+          <img src="/assets/settings.svg" />
+          Settings
+        </a>
+
+        <a href="#">
+          <img src="/assets/support.svg" />
+          Help & Support
+        </a>
+
+        <hr />
+
+        <a href="login.html">
+          <img src="/assets/logout-icon.svg" />
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-wrapper">
+      <header>
+        <!-- Menu Toggle -->
+        <button class="hamburger-btn" id="hamburgerBtn">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <!-- Welcome Message -->
+        <div class="welcome-left">
+          <img src="/assets/deji.jpeg" alt="" class="welcome-avatar" />
+          <div>
+            <p>Welcome back,</p>
+            <h3>Olawuyi Adedeji👋</h3>
+          </div>
+        </div>
+
+        <div class="welcome-right">
+          <div class="position-relative d-inline-block">
+            <img src="/assets/notification-icon.svg" alt="" width="35" />
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              3
+            </span>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              style="background: none; border: none"
+            >
+              <div
+                style="
+                  width: 45px;
+                  height: 45px;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  display: inline-block;
+                "
+              >
+                <img
+                  src="/assets/deji.jpeg"
+                  alt=""
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+              </div>
+              <span id="dropdownName" style="color: #111827; font-weight: 600; margin-left: 8px; font-size: 14px;">Olawuyi Adedeji</span>
+              
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item text-danger" href="login.html"
+                  >Log Out</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Notifications -->
+        <!-- Profile -->
+      </header>
+
+      <main>
+        <div class="my-cards">
+          <div class="my">
+            <h2>My Cards</h2>
+            <p>Manage your cards, view details and control how you spend.</p>
+          </div>
+          <button class="add">+ Add New Card</button>
+        </div>
+
+        <div class="cards-main">
+          <div class="cards-top">
+            <div class="top-left">
+              <div class="primary">
+                <h2>Primary Card</h2>
+                <i class="bi bi-three-dots-vertical"></i>
+              </div>
+
+              <div class="card-img">
+                <h2
+                  class="card-no"
+                  data-full="4532 8210 9981 1234"
+                  data-masked="**** **** **** 1234"
+                >
+                  **** **** **** 1234
+                </h2>
+
+                <div class="name">
+                  <p>Card Holder</p>
+                  <h5>Olawuyi Adedeji</h5>
+                </div>
+
+                <div class="valid">
+                  <p>Valid Thru</p>
+                  <h5>06/2030</h5>
+                </div>
+
+                <div class="cvv">
+                  <p>CVV</p>
+                  <h5 data-full="847" data-masked="***">***</h5>
+                </div>
+              </div>
+
+              <div class="btn-container">
+                <button class="view" id="viewCardBtn">
+                  <i class="bi bi-eye" id="viewCardIcon"></i>
+                  <span id="viewCardText">View Card Details</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="top-middle">
+              <div class="your-cards">
+                <h2>Your Cards</h2>
+
+                <!-- Card 1 -->
+                <div class="card-row">
+                  <div class="card-left">
+                    <img src="./assets/small-blue.png" alt="Debit Card" />
+
+                    <div class="card-info">
+                      <div class="card-title">
+                        <h5>Debit Card</h5>
+                        <span class="primary-badge">Primary</span>
+                      </div>
+
+                      <p>**** **** **** 1234</p>
+                    </div>
+                  </div>
+
+                  <div class="card-right">
+                    <span class="active-badge">Active</span>
+                    <i class="bi bi-three-dots-vertical"></i>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-row">
+                  <div class="card-left">
+                    <img src="./assets/small-black.png" alt="Prepaid Card" />
+
+                    <div class="card-info">
+                      <h5>Prepaid Card</h5>
+                      <p>**** **** **** 5678</p>
+                    </div>
+                  </div>
+
+                  <div class="card-right">
+                    <span class="active-badge">Active</span>
+                    <i class="bi bi-three-dots-vertical"></i>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-row">
+                  <div class="card-left">
+                    <img src="./assets/small-purple.png" alt="Virtual Card" />
+
+                    <div class="card-info">
+                      <h5>Virtual Card</h5>
+                      <p>**** **** **** 9012</p>
+                    </div>
+                  </div>
+
+                  <div class="card-right">
+                    <span class="active-badge">Active</span>
+                    <i class="bi bi-three-dots-vertical"></i>
+                  </div>
+                </div>
+
+                <!-- Create Card -->
+                <div class="card-row">
+                  <div class="card-left">
+                    <div class="add-card">
+                      <i class="bi bi-plus-lg"></i>
+                    </div>
+
+                    <div class="card-info">
+                      <h5>Create Virtual Card</h5>
+                      <p>For online payments</p>
+                    </div>
+                  </div>
+
+                  <i class="bi bi-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="top-right">
+              <div class="right-header">
+                <h2>Card Controls</h2>
+              </div>
+
+              <div class="card-actions">
+                <div class="action-row">
+                  <div class="action-left">
+                    <div class="action-icon blue">
+                      <i class="bi bi-lock"></i>
+                    </div>
+
+                    <div class="action-info">
+                      <h5>Lock Card</h5>
+                      <p>Temporarily lock your card</p>
+                    </div>
+                  </div>
+
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+
+                <div class="action-row">
+                  <div class="action-left">
+                    <div class="action-icon blue">
+                      <i class="bi bi-key"></i>
+                    </div>
+
+                    <div class="action-info">
+                      <h5>Change PIN</h5>
+                      <p>Update your card PIN</p>
+                    </div>
+                  </div>
+
+                  <i class="bi bi-chevron-right action-arrow"></i>
+                </div>
+
+                <div class="action-row">
+                  <div class="action-left">
+                    <div class="action-icon blue">
+                      <i class="bi bi-credit-card"></i>
+                    </div>
+
+                    <div class="action-info">
+                      <h5>Replace Card</h5>
+                      <p>Request a new physical card</p>
+                    </div>
+                  </div>
+
+                  <i class="bi bi-chevron-right action-arrow"></i>
+                </div>
+
+                <div class="action-row">
+                  <div class="action-left">
+                    <div class="action-icon red">
+                      <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+
+                    <div class="action-info">
+                      <h5>Report Lost / Stolen</h5>
+                      <p>Report your card</p>
+                    </div>
+                  </div>
+
+                  <i class="bi bi-chevron-right action-arrow"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cards-bottom">
+            <div class="bottom-left">
+              <div class="recent-header">
+                <h2>Recent Card Transactions</h2>
+                <a href="">View All</a>
+              </div>
+
+              <table>
+                <thead>
+                  <tr class="head">
+                    <th>Date &amp; Time</th>
+                    <th>Description</th>
+                    <th>Card</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class="cell-title">June 18, 2026</p>
+                      <p class="cell-subtitle">10:45 AM</p>
+                    </td>
+                    <td>
+                      <p class="cell-title">Jumia Nigeria</p>
+                      <p class="cell-subtitle">Online Purchase</p>
+                    </td>
+                    <td class="card-cell">
+                      <img src="/assets/small-blue.png" alt="Card" width="40" />
+                      <span style="font-size: 13px">•••• 1234</span>
+                    </td>
+                    <td style="font-size: 13px">-&#8358;25,500.00</td>
+                    <td>
+                      <span class="status-badge status-active">Successful</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="cell-title">June 17, 2026</p>
+                      <p class="cell-subtitle">04:30 PM</p>
+                    </td>
+                    <td>
+                      <p class="cell-title">ATM Withdrawal</p>
+                      <p class="cell-subtitle">Access Bank, Victoria Island</p>
+                    </td>
+                    <td class="card-cell">
+                      <img src="/assets/small-blue.png" alt="Card" width="40" />
+                      <span style="font-size: 13px">•••• 1234</span>
+                    </td>
+                    <td style="font-size: 13px">-&#8358;50,000.00</td>
+                    <td>
+                      <span class="status-badge status-active">Successful</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="cell-title">June 17, 2026</p>
+                      <p class="cell-subtitle">11:20 AM</p>
+                    </td>
+                    <td>
+                      <p class="cell-title">MTN Data Subscription</p>
+                      <p class="cell-subtitle">Monthly Plan</p>
+                    </td>
+                    <td class="card-cell">
+                      <img src="/assets/small-blue.png" alt="Card" width="40" />
+                      <span style="font-size: 13px">•••• 1234</span>
+                    </td>
+                    <td style="font-size: 13px">-&#8358;2,000.00</td>
+                    <td>
+                      <span class="status-badge status-active">Successful</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="cell-title">June 16, 2026</p>
+                      <p class="cell-subtitle">07:15 PM</p>
+                    </td>
+                    <td>
+                      <p class="cell-title">Prince Ebeano Supermarket</p>
+                      <p class="cell-subtitle">POS Purchase</p>
+                    </td>
+                    <td class="card-cell">
+                      <img src="/assets/small-blue.png" alt="Card" width="40" />
+                      <span style="font-size: 13px">•••• 1234</span>
+                    </td>
+                    <td style="font-size: 13px">-&#8358;8,750.00</td>
+                    <td>
+                      <span class="status-badge status-active">Successful</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="cell-title">June 16, 2026</p>
+                      <p class="cell-subtitle">02:10 PM</p>
+                    </td>
+                    <td>
+                      <p class="cell-title">Konga Online Shopping</p>
+                      <p class="cell-subtitle">Online Purchase</p>
+                    </td>
+                    <td class="card-cell">
+                      <img src="/assets/small-blue.png" alt="Card" width="40" />
+                      <span style="font-size: 13px">•••• 1234</span>
+                    </td>
+                    <td style="font-size: 13px">-&#8358;12,400.00</td>
+                    <td>
+                      <span class="status-badge status-active">Successful</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="view-all">
+                <a href="">View All Transaction &rarr;</a>
+              </div>
+            </div>
+
+            <div class="top-right second">
+              <div class="right-header">
+                <h2>Card Controls</h2>
+              </div>
+
+              <div class="card-actions">
+                <div class="action-row">
+                  <div class="action-left">
+                    <div class="action-icon blue">
+                      <i class="bi bi-lock"></i>
+                    </div>
+
+                    <div class="action-info">
+                      <h5>Lock Card</h5>
+                      <p>Temporarily lock your card</p>
+                    </div>
+                  </div>
+
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+
+                <div class="action-row">
+                  <div class="action-left">
+                    <div class="action-icon blue">
+                      <i class="bi bi-key"></i>
+                    </div>
+
+                    <div class="action-info">
+                      <h5>Change PIN</h5>
+                      <p>Update your card PIN</p>
+                    </div>
+                  </div>
+
+                  <i class="bi bi-chevron-right action-arrow"></i>
+                </div>
+
+                <div class="action-row">
+                  <div class="action-left">
+                    <div class="action-icon blue">
+                      <i class="bi bi-credit-card"></i>
+                    </div>
+
+                    <div class="action-info">
+                      <h5>Replace Card</h5>
+                      <p>Request a new physical card</p>
+                    </div>
+                  </div>
+
+                  <i class="bi bi-chevron-right action-arrow"></i>
+                </div>
+
+                <div class="action-row">
+                  <div class="action-left">
+                    <div class="action-icon red">
+                      <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+
+                    <div class="action-info">
+                      <h5>Report Lost / Stolen</h5>
+                      <p>Report your card</p>
+                    </div>
+                  </div>
+
+                  <i class="bi bi-chevron-right action-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="left-box">
+              <div class="bottom-right">
+                <div class="limits-header">
+                  <h2>Spending Limits</h2>
+                  <a href="#">View/Edit</a>
+                </div>
+
+                <div class="limit-row">
+                  <div class="limit-left">
+                    <div class="icon blue">
+                      <i class="bi bi-wallet2"></i>
+                    </div>
+
+                    <div class="limit-info">
+                      <div class="limit-top">
+                        <h5>Daily Withdrawal Limit</h5>
+                        <span class="limit-amount">NGN 500,000</span>
+                      </div>
+
+                      <p>NGN 200,000 remaining</p>
+
+                      <div class="progress">
+                        <div class="progress-bar" style="width: 40%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="limit-row">
+                  <div class="limit-left">
+                    <div class="icon gray">
+                      <i class="bi bi-credit-card"></i>
+                    </div>
+
+                    <div class="limit-info">
+                      <div class="limit-top">
+                        <h5>Daily Purchase Limit</h5>
+                        <span class="limit-amount">NGN 1,000,000</span>
+                      </div>
+
+                      <p>NGN 350,000 remaining</p>
+
+                      <div class="progress">
+                        <div class="progress-bar" style="width: 55%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Online Transactions -->
+                <div class="limit-row">
+                  <div class="limit-left">
+                    <div class="icon yellow">
+                      <i class="bi bi-lightbulb"></i>
+                    </div>
+
+                    <div class="limit-info">
+                      <div class="limit-top">
+                        <h5>Online Transaction Limit</h5>
+                        <span class="limit-amount">NGN 750,000</span>
+                      </div>
+
+                      <p>NGN 300,000 remaining</p>
+
+                      <div class="progress">
+                        <div class="progress-bar" style="width: 45%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom-blue">
+                <div class="blue-left">
+                  <i class="bi bi-shield-check secure"></i>
+                </div>
+                <div class="blue-right">
+                  <h4>Your security is our priority</h4>
+                  <p>
+                    All card transactions are protected with 256-bit SSL
+                    encryption.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <!-- Copyright -->
+        <div class="footer-left">
+          <p>©2026 SwiftBank. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+          <a href="">Privacy Policy</a>
+          <a href="">Terms of Service</a>
+          <a href="">Help Center</a>
+        </div>
+      </footer>
+
+      <nav class="bottom-nav">
+      <a href="dashboard.html"><i class="bi bi-house"></i><span>Dashboard</span></a>
+      <a href="transfer.html"><i class="bi bi-arrow-left-right"></i><span>Transfer</span></a>
+      <a href="bills.html"><i class="bi bi-receipt"></i><span>Bills</span></a>
+      <a href="cards.html" class="active"><i class="bi bi-credit-card"></i><span>Cards</span></a>
+      <a href="profile.html"><i class="bi bi-person"></i><span>Profile</span></a>
+    </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="cards.js"></script>
+    <script type="module" src="auth-guard.js"></script>
+  </body>
+</html>
