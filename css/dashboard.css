@@ -1176,11 +1176,38 @@ footer {
     display: none;
   }
 }
+@media (max-width: 399px) {
+  .btns {
+    margin-top: 15px;
+  }
+}
 
 @media (max-width: 377px) {
+   .btns{
+    margin-top: -14px;
+  }
   .acct-btn{
     font-size: 13px;
   }
+}
+@media (max-width: 386px) {
+   .btns{
+    margin-top: 15px;
+  }
+  #maskedAccountNumber{
+    font-size: 15px !important;
+  }
+
+}
+
+@media (max-width: 345px) {
+   .btns{
+    margin-top: -5px;
+  }
+  #maskedAccountNumber{
+    font-size: 13px !important;
+  }
+
 }
 
 @media (max-width: 330px) {
@@ -1206,10 +1233,5 @@ footer {
 
   .bottom-nav a {
     font-size: 12px;
-  }
-}
-@media (max-width: 390px) {
-  .btns {
-    margin-top: -15px;
   }
 }

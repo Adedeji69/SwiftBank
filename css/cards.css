@@ -1433,6 +1433,21 @@ footer {
   }
 }
 
+@media (max-width: 399px) {
+   .name {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: #fff;
+  }
+   .cvv {
+    position: absolute;
+    right: 210px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
 @media (max-width: 380px) {
   .card-img{
     margin-top: -20px;
@@ -1513,17 +1528,4 @@ footer {
     font-size: 12px;
   }
 }
-@media (max-width: 399px) {
-   .name {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    color: #fff;
-  }
-   .cvv {
-    position: absolute;
-    right: 210px;
-    color: #fff;
-    text-align: center;
-  }
-}
+
