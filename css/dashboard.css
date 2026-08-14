@@ -1208,3 +1208,8 @@ footer {
     font-size: 12px;
   }
 }
+@media (max-width: 390px) {
+  .btns {
+    margin-top: -15px;
+  }
+}

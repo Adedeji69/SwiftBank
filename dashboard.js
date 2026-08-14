@@ -26,7 +26,7 @@ auth.onAuthStateChanged(function (user) {
     balanceAmount.textContent = realBalance;
 
     document.getElementById("maskedAccountNumber").innerHTML =
-    "Main Account :-&nbsp; " + userData.accountNumber;
+    "Swift Account -&nbsp; " + userData.accountNumber;
   });
 });
 
