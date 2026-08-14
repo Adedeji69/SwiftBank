@@ -345,7 +345,7 @@ body {
 
 @media (max-width: 485px) {
     .hero{
-    background-image: url(assets/banner-mobile.png);
+    background-image: url(../assets/banner-mobile.png);
     height: 800px;
     background-size: cover;
     background-position: center;
