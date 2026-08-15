@@ -1,6 +1,13 @@
 import { app } from "./firebase-config.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -12,7 +19,6 @@ function generateAccountNumber() {
   }
   return accountNumber;
 }
-
 
 function makeToggle(btnId, inputId, iconId) {
   document.getElementById(btnId).addEventListener("click", function () {
@@ -78,36 +84,40 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
   if (!form.checkValidity() || !valid) return;
 
   const email = document.getElementById("email").value;
-const password = pw.value;
+  const password = pw.value;
 
-const fullName = document.getElementById("fullName").value;
-const phone = document.getElementById("phone").value;
-const dob = document.getElementById("dob").value;
-const accountType = document.getElementById("accountType").value;
+  const fullName = document.getElementById("fullName").value;
+  const phone = document.getElementById("phone").value;
+  const dob = document.getElementById("dob").value;
+  const accountType = document.getElementById("accountType").value;
 
-createUserWithEmailAndPassword(auth, email, password)
-  .then(function (userCredential) {
-    const user = userCredential.user;
-    const accountNumber = generateAccountNumber();
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(function (userCredential) {
+      const user = userCredential.user;
+      const accountNumber = generateAccountNumber();
 
-    setDoc(doc(db, "users", user.uid), {
-      fullName: fullName,
-      email: email,
-      phone: phone,
-      dob: dob,
-      accountType: accountType,
-      accountNumber: accountNumber,
-      balance: 2456789,
-    })
-      .then(function () {
-        alert("Account created successfully!");
-        window.location.href = "login.html";
+      setDoc(doc(db, "users", user.uid), {
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        dob: dob,
+        accountType: accountType,
+        accountNumber: accountNumber,
+        balance: 2456789,
+        photoURL:
+          "https://res.cloudinary.com/dtmn0dcto/image/upload/v1786796002/icons8-person-100_bdxccx.png",
       })
-      .catch(function (error) {
-        alert("Account created, but failed to save profile: " + error.message);
-      });
-  })
-  .catch(function (error) {
-    alert(error.message);
-  });
+        .then(function () {
+          alert("Account created successfully!");
+          window.location.href = "login.html";
+        })
+        .catch(function (error) {
+          alert(
+            "Account created, but failed to save profile: " + error.message,
+          );
+        });
+    })
+    .catch(function (error) {
+      alert(error.message);
+    });
 });
