@@ -1175,10 +1175,15 @@ footer {
   .premium.pre{
     display: none;
   }
+  /* .account-card {
+    width: 100%;
+    min-height: 260px;  
+    padding-bottom: 20px; 
+  } */
 }
 @media (max-width: 399px) {
   .btns {
-    margin-top: 15px;
+    margin-top: -1px;
   }
 }
 
