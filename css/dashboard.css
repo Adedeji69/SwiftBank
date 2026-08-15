@@ -1183,7 +1183,7 @@ footer {
 }
 @media (max-width: 399px) {
   .btns {
-    margin-top: -1px;
+    margin-top: -10px;
   }
 }
 
