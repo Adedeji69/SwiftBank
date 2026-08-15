@@ -1183,16 +1183,16 @@ footer {
 }
 @media (max-width: 399px) {
   .btns {
-    margin-top: -15px;
+    margin-top: 13px;
   }
   #maskedAccountNumber{
-    font-size: 13px !important;
+    font-size: 15px !important;
   }
   #balanceAmount{
-    font-size: 20px;
+    font-size: 28px;
   }
   .acct-bal{
-    font-size: 13px !important;
+    font-size: 16px !important;
   }
 }
 

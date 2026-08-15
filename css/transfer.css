@@ -797,7 +797,7 @@ footer {
 
   #BankAccount-tab,
   #SwiftUser-tab {
-    width: auto;
+    width: 355px !important;
   }
 
   .top,
@@ -827,6 +827,46 @@ footer {
     display: block;
   }
 }
+
+@media (max-width: 1020px) {
+  #BankAccount-tab,
+  #SwiftUser-tab {
+    width: 350px !important;
+  }
+}
+@media (max-width: 1010px) {
+  #BankAccount-tab,
+  #SwiftUser-tab {
+    width: 347px !important;
+  }
+}
+@media (max-width: 999px) {
+  #BankAccount-tab,
+  #SwiftUser-tab {
+    width: 335px !important;
+  }
+}
+@media (max-width: 980px) {
+  #BankAccount-tab,
+  #SwiftUser-tab {
+    width: 330px !important;
+  }
+}
+@media (max-width: 970px) {
+ .nav-tabs{
+    display: flex;
+    flex-direction: column !important;
+  }
+  #BankAccount-tab,
+  #SwiftUser-tab {
+    width: 100% !important; 
+  }
+  .last{
+    display: none;
+  }
+}
+
+
 
 @media (max-width: 768px) {
 
@@ -899,9 +939,16 @@ footer {
     flex: none;
   }
 
+ .nav-tabs{
+    display: flex;
+    flex-direction: column !important;
+  }
   #BankAccount-tab,
   #SwiftUser-tab {
-    width: 338px !important;
+    width: 100% !important; 
+  }
+  .last{
+    display: none;
   }
 
   .top,
@@ -1033,12 +1080,16 @@ footer {
     padding: 5px;
   }
 
+ .nav-tabs{
+    display: flex;
+    flex-direction: column !important;
+  }
   #BankAccount-tab,
   #SwiftUser-tab {
-    display: flex;
-    flex-direction: row;
-    width: 175px !important;
-    /* background-color: red; */
+    width: 100% !important; 
+  }
+  .last{
+    display: none;
   }
 
   .list {
@@ -1127,15 +1178,30 @@ footer {
   .bottom-nav i {
     font-size: 21px;
   }
+  .acct-no{
+    text-decoration: none;
+  }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 430px) {
   #BankAccount-tab,
   #SwiftUser-tab {
     display: flex;
     flex-direction: row;
     width: 172px !important;
-    /* background-color: red !important; */
+    /* background-color: red; */
+  }
+}
+
+
+@media (max-width: 426px) {
+  .nav-tabs{
+    display: flex;
+    flex-direction: column !important;
+  }
+  #BankAccount-tab,
+  #SwiftUser-tab {
+    width: 100% !important; 
   }
   .last{
     display: none;
@@ -1143,12 +1209,23 @@ footer {
 }
 
 @media (max-width: 377px) {
+  .nav-tabs{
+    display: flex;
+    flex-direction: column !important;
+  }
   #BankAccount-tab,
   #SwiftUser-tab {
+    width: 100% !important; 
+  }
+   .account-row{
     display: flex;
-    flex-direction: row;
-    width: 147px !important;
-    /* background-color: red !important; */
+    flex-direction: column;
+  }
+  .verify-btn{
+    height: 40px;
+  }
+  .last{
+    display: none;
   }
   .list {
     height: auto;
@@ -1176,15 +1253,21 @@ footer {
 .transfer h4, a{
   font-size: 14px;
 }
-
+.acct-no{
+  text-decoration: none;
+}
 }
 @media (max-width: 330px) {
+  .nav-tabs{
+    display: flex;
+    flex-direction: column !important;
+  }
   #BankAccount-tab,
   #SwiftUser-tab {
-    display: flex;
-    flex-direction: row;
-    width: 120px !important;
-    /* background-color: red !important; */
+    width: 100% !important; 
+  }
+  .last{
+    display: none;
   }
 
   .bottom-nav i {
@@ -1193,5 +1276,15 @@ footer {
 
   .bottom-nav a {
     font-size: 12px;
+  }
+  .account-row{
+    display: flex;
+    flex-direction: column;
+  }
+  .verify-btn{
+    height: 40px;
+  }
+  .acct-no{
+    text-decoration: none;
   }
 }
