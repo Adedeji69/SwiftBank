@@ -1,3 +1,22 @@
+import { app } from "./firebase-config.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+auth.onAuthStateChanged(function (user) {
+  if (!user) return;
+
+  getDoc(doc(db, "users", user.uid)).then(function (docSnap) {
+    if (!docSnap.exists()) return;
+
+    const userData = docSnap.data();
+    document.getElementById("cardHolderName").textContent = userData.fullName;
+  });
+});
+
+
 const hamburgerBtn = document.getElementById("hamburgerBtn");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.getElementById("sidebarOverlay");

@@ -23,6 +23,18 @@ onAuthStateChanged(auth, function (user) {
           if (dropdownNameEl) {
             dropdownNameEl.textContent = userData.fullName;
           }
+
+          if (userData.photoURL) {
+            const avatarEl = document.querySelector(".welcome-avatar");
+            if (avatarEl) {
+              avatarEl.src = userData.photoURL;
+            }
+
+            const dropdownAvatarEl = document.getElementById("dropdownAvatar");
+            if (dropdownAvatarEl) {
+              dropdownAvatarEl.src = userData.photoURL;
+            }
+          }
         }
         document.body.style.visibility = "visible";
       })
