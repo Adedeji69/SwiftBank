@@ -28,7 +28,7 @@ verifyUserBtn.addEventListener("click", function () {
     if (querySnapshot.empty) {
       verifiedRecipient = null;
       recipientNameField.value = "";
-      verifiedMsgText.textContent = "No SwiftBank user not found.";
+      verifiedMsgText.textContent = "Swift user not found.";
       verifiedMsg.style.color = "red";
       verifiedMsg.style.display = "block";
       return;
