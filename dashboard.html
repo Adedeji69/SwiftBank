@@ -162,8 +162,8 @@
               </div>
 
               <div class="btns">
-                <button class="acct-btn">Transfer</button>
-                <button class="acct-btn">Pay Bill</button>
+                <button class="acct-btn" onclick="window.location.href='transfer.html';">Transfer</button>
+                <button class="acct-btn" onclick="window.location.href='bills.html';">Pay Bill</button>
                 <button class="acct-btn">Top Up</button>
                 <button class="acct-btn-last">.&nbsp;.&nbsp;.</button>
               </div>
@@ -173,19 +173,22 @@
               <h5>Quick Actions</h5>
 
               <div class="quick-grid">
-                <div class="grid child-a">
+                <div class="grid child-a" onclick="window.location.href='transfer.html';" role="button" tabindex="0">
                   <img src="/assets/tranfer-blue.svg" alt="" />
                   <p>Transfer</p>
                 </div>
-                <div class="grid child-b">
+
+                <div class="grid child-b" onclick="window.location.href='bills.html';" role="button">
                   <img src="/assets/bills-blue.svg" alt="" />
                   <p>Pay Bills</p>
                 </div>
+
                 <div class="grid child-c">
                   <img src="/assets/top-up.svg" alt="" />
                   <p>Top Up</p>
                 </div>
-                <div class="grid child-d">
+
+                <div class="grid child-d" onclick="window.location.href='cards.html';">
                   <img src="/assets/card-blue.svg" alt="" />
                   <p>Cards</p>
                 </div>

@@ -260,7 +260,7 @@
                         placeholder="0123456789"
                       />
                       <button class="verify-btn" type="button">
-                        Verify Account
+                        Verify User
                       </button>
                     </div>
                     <div class="verified-msg">
@@ -268,6 +268,8 @@
                       Account number verified
                     </div>
                   </div>
+
+
 
                   <div class="form-group">
                     <label>Recipient Name</label>
@@ -308,13 +310,14 @@
                 </div>
 
                 <div class="tab-pane fade" id="swift-user-pane" role="tabpanel">
-                  <div class="form-group">
-                    <label>Recipient Username / SwiftBank Tag</label>
+
+                  <!-- <div class="form-group">
+                    <label>Recipient Account</label>
                     <div class="account-row">
                       <input
                         type="text"
                         id="usernameSwiftUser"
-                        placeholder="e.g. @johndoe"
+                        placeholder="Swift Account No."
                       />
                       <button class="verify-btn" type="button">
                         Verify User
@@ -333,13 +336,32 @@
                       class="readonly-field"
                       placeholder="John Doe"
                     />
+                  </div> -->
+
+                  <div class="form-group">
+                    <label>Recipient Account</label>
+                    <div class="account-row">
+                      <input type="text" id="usernameSwiftUser" placeholder="Swift Account No." />
+                      <button class="verify-btn" type="button" id="verifyUserBtn">
+                        Verify User
+                      </button>
+                    </div>
+                    <div class="verified-msg" id="verifiedMsg" style="display: none;">
+                      <!-- <span class="check">✓</span> -->
+                      <span id="verifiedMsgText">User verified</span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Recipient Name</label>
+                    <input type="text" class="readonly-field" id="recipientNameSwiftUser" placeholder="John Doe" readonly />
                   </div>
 
                   <div class="form-group">
                     <label>Amount</label>
                     <div class="amount-row">
                       <div class="amount-prefix">NGN</div>
-                      <input type="text" placeholder="50,000.00" />
+                      <input type="text" id="amountSwiftUser" placeholder="50,000.00" />
                     </div>
                     <div class="hint">Enter amount to transfer</div>
                   </div>
@@ -359,7 +381,7 @@
                     </div>
                   </div>
 
-                  <button class="submit-btn" type="button">
+                  <button class="submit-btn" type="button" id="submitTransferBtn">
                     Proceed to Confirm
                   </button>
                 </div>
@@ -592,7 +614,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="transfer.js"></script>
+    <script type="module" src="transfer.js"></script>
     <script type="module" src="auth-guard.js"></script>
   </body>
 </html>
